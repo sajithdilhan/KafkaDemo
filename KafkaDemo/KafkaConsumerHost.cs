@@ -27,6 +27,7 @@ namespace KafkaDemo
         }
         public Task StartAsync(CancellationToken cancellationToken)
         {
+            _logger.LogInformation("Consumer called");
             _cluster.ConsumeFromLatest("demo");
             _cluster.MessageReceived += record =>
             {

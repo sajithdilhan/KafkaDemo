@@ -24,7 +24,7 @@ namespace KafkaDemo
         {
             for (int i = 0; i < 100; i++)
             {
-                var value = "Hello World";
+                var value = $"Hello World:{i}";
                 _logger.LogInformation(value);
                 await _producer.ProduceAsync("demo", new Message<Null, string>()
                 {
